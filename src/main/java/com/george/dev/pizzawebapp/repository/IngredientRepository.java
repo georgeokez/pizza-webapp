@@ -1,6 +1,7 @@
 package com.george.dev.pizzawebapp.repository;
 
-import tacocloud.demo.models.Ingredient;
+
+import com.george.dev.pizzawebapp.models.Ingredient;
 
 /**
  * Created by George on 11/01/2019

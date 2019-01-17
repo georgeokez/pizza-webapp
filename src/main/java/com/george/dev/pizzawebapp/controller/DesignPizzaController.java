@@ -1,11 +1,16 @@
 package com.george.dev.pizzawebapp.controller;
 
 import com.george.dev.pizzawebapp.models.Ingredient;
+import com.george.dev.pizzawebapp.models.Ingredient.Type;
+import com.george.dev.pizzawebapp.models.Pizza;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
 import java.util.Arrays;
@@ -16,6 +21,9 @@ import java.util.stream.Collectors;
  * Created by George on 16/01/2019
  */
 
+@Slf4j
+@Controller
+@RequestMapping("/design")
 public class DesignPizzaController {
 
     @GetMapping
@@ -42,13 +50,13 @@ public class DesignPizzaController {
 
         log.info(String.format("This is so awesome"));
 
-        model.addAttribute("design", new Taco());
+        model.addAttribute("design", new Pizza());
 
-        return "Design";
+        return "design";
     }
 
     @PostMapping
-    public String processDesign(@Valid @ModelAttribute("design") Taco design, Errors errors, Model model) {
+    public String processDesign(@Valid @ModelAttribute("design") Pizza design, Errors errors, Model model) {
         if (errors.hasErrors()) {
             return "design";
         }

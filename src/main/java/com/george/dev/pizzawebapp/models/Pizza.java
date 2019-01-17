@@ -1,5 +1,7 @@
 package com.george.dev.pizzawebapp.models;
 
+import lombok.Data;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
@@ -9,6 +11,7 @@ import java.util.List;
  * Created by George on 16/01/2019
  */
 
+@Data
 public class Pizza {
 
     private Long id;
